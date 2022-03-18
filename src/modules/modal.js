@@ -12,7 +12,7 @@ const modal = (idsection, btn, modalHeader, overlay = '.overlay', close) => {
   buttons.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      if (screen.availWidth >= 768) modalAnimate(300, 0, overlay, modalHeader);
+      modalAnimate(300, 0, overlay, modalHeader);
 
     })
   })
