@@ -1,9 +1,7 @@
-const timer = (deadline, daysId, hoursId, minutesId, secondsId) => {
-
-    const timerDays = document.getElementById(daysId),
-      timerHours = document.getElementById(hoursId),
-      timerMinutesours = document.getElementById(minutesId),
-      timerSeconds = document.getElementById(secondsId);
+const timer = (timerHeader, deadline, daysId, hoursId, minutesId, secondsId) => {
+  
+    const timer = document.querySelectorAll(timerHeader);
+     
   
     const addZero = (num) => {
         if (num <= 9) {
@@ -12,8 +10,8 @@ const timer = (deadline, daysId, hoursId, minutesId, secondsId) => {
             return num;
         }
     };
-    console.log(timerSeconds)
 
+    
     const getTimerRemaining = () => {
       let dateStop = new Date(deadline).getTime();
       let dateNow = new Date().getTime();
@@ -34,7 +32,15 @@ const timer = (deadline, daysId, hoursId, minutesId, secondsId) => {
   
     }
   
-    const updateClock = () => {
+    
+
+    timer.forEach(elem => {
+      const  timerDays = elem.querySelector(daysId),
+      timerHours = elem.querySelector(hoursId),
+      timerMinutesours = elem.querySelector(minutesId),
+      timerSeconds = elem.querySelector(secondsId);
+      console.log(timerSeconds)
+      const updateClock = () => {
   
       const timerAction = document.querySelector('.timer-action');
   
@@ -58,8 +64,10 @@ const timer = (deadline, daysId, hoursId, minutesId, secondsId) => {
        
     }
     
-    updateClock();
+      updateClock();
     let idIntervalTimer = setInterval(updateClock, 1000)
+    })
+    
   }
   
   export default timer

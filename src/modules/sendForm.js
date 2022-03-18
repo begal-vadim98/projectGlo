@@ -5,7 +5,7 @@ const sendForm = ({
   formId,
   someElem = []
 }) => {
-  const form = document.querySelector(formId);
+  const forms = document.querySelectorAll(formId);
 
   const statusBlock = document.createElement('div');
 
@@ -23,7 +23,7 @@ const sendForm = ({
     }).then((response) => response.json())
   }
 
-  const submitForm = () => {
+  const submitForm = (form) => {
     const formElements = form.querySelectorAll('input');
     const formData = new FormData(form);
     const formBody = {};
@@ -67,14 +67,16 @@ const sendForm = ({
 
   try {
 
-    if (!form) throw new Error('Форма не найдена');
+    if (forms.length === 0) throw new Error('Форма не найдена');
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
+    forms.forEach(elem => {
 
-      submitForm();
-
+      elem.addEventListener('submit', (e) => {
+        e.preventDefault();
+        submitForm(elem);
+      })
     })
+   
   } catch (error) {
     console.log(error.message)
   }
