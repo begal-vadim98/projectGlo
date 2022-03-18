@@ -102,6 +102,7 @@ input.error {
     0 0 8px rgba(220, 0, 0, 0.6);
 }
 input.success {
+  color: rgb(0, 144, 42);
   border-color: rgb(0, 144, 42);
   outline: 0px;
   box-shadow: rgb(0 0 0 / 8%) 0px 1px 1px inset, rgb(0 144 42 / 60%) 0px 0px 8px;
