@@ -1,0 +1,54 @@
+import {animate} from './helpers'
+
+const calc = () => {
+  const calcBlock = document.querySelector('.calc-block');
+
+  if(calcBlock) {
+
+    const calcType = calcBlock.querySelector('#calc-type'),
+    calcTypeMaterial = calcBlock.querySelector('#calc-type-material'),
+    calcInput = calcBlock.querySelector('#calc-input'),
+    total = document.getElementById('calc-total');
+  
+
+    const animateChangeTotal = (value) => {
+      animate({
+        duration: 500,
+        timing(timeFraction) {
+          return timeFraction;
+        },
+        draw(progress) {
+            total.value =  Math.round(value * progress) ;
+        }
+      });
+    }
+
+    const countCalc = () => {
+
+      const calcTypeValue = +calcType.options[calcType.selectedIndex].value;
+      const calcTypeMaterialValue = +calcTypeMaterial.options[calcTypeMaterial.selectedIndex].value;
+
+      let totalValue = 0;
+
+
+      if(calcTypeValue && calcTypeMaterialValue && calcInput.value) {
+        totalValue =  calcInput.value * calcTypeValue * calcTypeMaterialValue;
+
+      } else totalValue = 0;
+      
+      animateChangeTotal(totalValue);
+
+    }
+  
+      calcBlock.addEventListener('input', (e) => {
+
+        if(e.target === calcType ||
+          e.target ===  calcTypeMaterial ||
+          e.target === calcInput ) countCalc();
+        
+      })
+  }
+  
+}
+
+export default calc

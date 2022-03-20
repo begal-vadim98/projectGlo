@@ -1,11 +1,9 @@
 import modalAnimate from './modalAnimate'
 
 
-const modal = (idsection, btn, modalHeader, overlay = '.overlay', close) => {
+const modal = ( btn, modalHeader, overlay = '.overlay', close) => {
 
-  const section = document.querySelector(idsection),
-    buttons = section.querySelectorAll(btn),
-    modal = document.querySelector(modalHeader);
+  const buttons = document.querySelectorAll(btn);
 
 
 // Открытие модального окна
@@ -18,10 +16,10 @@ const modal = (idsection, btn, modalHeader, overlay = '.overlay', close) => {
   })
   
 // Закрытие модального окна
-  modal.addEventListener('click', (e) => {
-    if(e.target.classList.contains(close)) {    
+  document.addEventListener('click', (e) => {
+    if(e.target.classList.contains(close) || 
+    e.target.classList.contains(overlay.replace(/./, '')) ) {    
       e.preventDefault();  
-      
       modalAnimate(300, 1, overlay, modalHeader);
     }
   })

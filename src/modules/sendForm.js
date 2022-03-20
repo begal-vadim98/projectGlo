@@ -34,6 +34,20 @@ const sendForm = ({
       formBody[key] = val;
     })
 
+    
+      someElem.forEach(elem => {
+        const element = document.getElementById(elem.id);
+        
+        if(element) {
+          if (elem.type === 'block' && +element.textContent > 0) {
+            formBody[elem.id] = element.textContent;
+          } else if (elem.type === 'input' && +element.value > 0) formBody[elem.id] = element.value;
+        }
+        
+        
+      })
+  
+    
 
     if (validate(formElements)) {
 
