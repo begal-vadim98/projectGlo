@@ -35,11 +35,12 @@ const timer = (timerHeader, deadline, daysId, hoursId, minutesId, secondsId) => 
     
 
     timer.forEach(elem => {
+
       const  timerDays = elem.querySelector(daysId),
       timerHours = elem.querySelector(hoursId),
       timerMinutesours = elem.querySelector(minutesId),
       timerSeconds = elem.querySelector(secondsId);
-      console.log(timerSeconds)
+
       const updateClock = () => {
   
       const timerAction = document.querySelector('.timer-action');
@@ -63,9 +64,9 @@ const timer = (timerHeader, deadline, daysId, hoursId, minutesId, secondsId) => 
       }
        
     }
-    
+      let idIntervalTimer = setInterval(updateClock, 1000);
       updateClock();
-    let idIntervalTimer = setInterval(updateClock, 1000)
+      
     })
     
   }

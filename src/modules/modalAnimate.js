@@ -17,7 +17,6 @@ const modalAnimate = (duration, time, modalHeader, overlay,   displayStyle = 'fl
 
        modal.style.display = displayStyle;
        modalOverlay.style.display = displayStyle;
-      //  modal.style.display = displayStyle;
 
        if(+modal.style.opacity === 0 ) {
         modal.style.display = 'none';

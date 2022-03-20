@@ -18,7 +18,7 @@ const modal = (idsection, btn, modalHeader, overlay = '.overlay', close) => {
   })
   
 // Закрытие модального окна
-  window.addEventListener('click', (e) => {
+  modal.addEventListener('click', (e) => {
     if(e.target.classList.contains(close)) {    
       e.preventDefault();  
       

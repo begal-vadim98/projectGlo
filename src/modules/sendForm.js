@@ -48,7 +48,9 @@ const sendForm = ({
           statusBlock.textContent = successText;
 
           setTimeout(() => form.removeChild(statusBlock), 1500);
-          setTimeout(() => modalAnimate(300, 1, '.overlay', '.header-modal'), 1500);
+  
+          // setTimeout(() => modalAnimate(300, 1, '.overlay', '.header-modal'), 1500);
+          console.log(data)
 
 
           formElements.forEach(input => {
