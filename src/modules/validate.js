@@ -2,8 +2,8 @@ const validate = (list) => {
 
   let success = true;
 
-  let regPhone = /\d[\d\(\)\ -]{9,11}\d$/,
-    regName = /^[а-яА-Я\ /]{2,16}$/;
+  let regPhone = /\d[\d\(\)\ -]{9,16}\d$/,
+    regName = /^[а-яА-Яa-zA-Z\ /]{2,16}$/;
 
   list.forEach(input => {
     input.classList.remove('error');

@@ -3,7 +3,7 @@ import validate from './validate'
 const validation = (formMessege, formName, formEmail, formTell, invalidClass = 'invalid', validClass = 'valid' ) => {
 
   const  regPhone = /[^0-9]/,
-    regName = /([^а-яА-Я. ])+/gi;
+    regName = /([^А-ЯA-Z. ])+/gi;
 
 const forInputValid = (reg, elem) => {
   const inputTex = document.querySelectorAll(`form input[name=${elem}]`);
