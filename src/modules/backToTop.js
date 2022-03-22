@@ -8,7 +8,7 @@ const backToTop = () => {
 
   const backTop = () => {
     animate({
-      duration: 1500,
+      duration: 2000,
       timing: bounceEaseInOut,
       draw: function(progress) {
    
