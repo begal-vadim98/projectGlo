@@ -6,27 +6,14 @@ const backToTop = () => {
 
   btn.style.display = 'none';
 
-  const backTop = () => {
-    animate({
-      duration: 2000,
-      timing: bounceEaseInOut,
-      draw: function(progress) {
-   
-        let linear = Math.abs(1 - progress),
-          scroll = +document.documentElement.scrollTop;
-   
-        document.documentElement.scrollTop = scroll *  linear;
-    
-      }
-    });
-         
-  }
+ 
 
+  btn.addEventListener('click', (event) => document.getElementById('header').scrollIntoView({block: "start", behavior: "smooth"}));
+    
   window.addEventListener('scroll', () => {
     if(window.pageYOffset > offer.clientHeight + offer.offsetTop) btn.style.display = 'block';
     else btn.style.display = 'none';
   })
-  btn.addEventListener('click', backTop);
 }
 
 export default backToTop

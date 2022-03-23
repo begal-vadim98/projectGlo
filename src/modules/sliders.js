@@ -14,7 +14,7 @@ const sliders = () => {
     breakpoints: {
       576: {
         slidesPerView: 3,
-        spaceBetween: 20
+        spaceBetween: 0
       },
     }
   });

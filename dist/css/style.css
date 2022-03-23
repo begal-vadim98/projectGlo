@@ -510,6 +510,7 @@ input.success {
 }
 .benefits-inner {
   text-align: center;
+  width: 60%;
 }
 .benefit-image {
   margin-bottom: 22px;
