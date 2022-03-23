@@ -1,4 +1,4 @@
-import {animate, bounceEaseInOut} from './helpers'
+
 const backToTop = () => {
 
   const btn = document.querySelector('.smooth-scroll__img'),
