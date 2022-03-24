@@ -35,7 +35,7 @@ const calc = (price) => {
         totalValue = price *  calcInput.value * calcTypeValue * calcTypeMaterialValue;
         animateChangeTotal(totalValue);
         
-      } else  totalValue = 0; animateChangeTotal(totalValue);
+      } else  totalValue = 0; 
       
       
       
