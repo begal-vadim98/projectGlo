@@ -508,9 +508,9 @@ input.success {
 #benefits {
   background-color: #f5f6f6;
 }
+
 .benefits-inner {
   text-align: center;
-  width: 60%;
 }
 .benefit-image {
   margin-bottom: 22px;
@@ -1750,3 +1750,4 @@ input.error {
   height: 1px;
   background-color: rgba(0, 0, 0, 0.534);
 }
+

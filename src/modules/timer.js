@@ -43,10 +43,8 @@ const timer = (timerHeader, deadline, daysId, hoursId, minutesId, secondsId) => 
 
       const updateClock = () => {
   
-      const timerAction = document.querySelector('.timer-action');
-  
+      
       let getTime = getTimerRemaining();
-  
   
         timerDays.textContent = addZero(getTime.days);
         timerHours.textContent = addZero(getTime.hours);
@@ -58,7 +56,7 @@ const timer = (timerHeader, deadline, daysId, hoursId, minutesId, secondsId) => 
           timerHours.textContent = "00";
           timerMinutesours.textContent = "00";
           timerSeconds.textContent = "00";
-          timerAction.textContent = "Акция закончилась";
+          elem.firstChild.textContent = "Акция закончилась";
   
           clearInterval(idIntervalTimer);
       }

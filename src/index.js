@@ -6,6 +6,7 @@ import sliders from './modules/sliders'
 import calc from './modules/calc'
 import backToTop from './modules/backToTop'
 import modalDocument from './modules/modalDocument'
+import menuMobile from './modules/menuMobile'
 
 modal('#services .btn', '.services-modal', '.overlay', 'services-modal__close');
 modal('#header .btn-block', '.header-modal', '.overlay', 'header-modal__close');
@@ -39,8 +40,9 @@ sendForm({
 });
 
 // Калькулятор
-calc();
+calc(1000);
 
 modalDocument();
 
 backToTop();
+menuMobile();

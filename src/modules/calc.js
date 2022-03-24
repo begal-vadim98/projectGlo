@@ -1,6 +1,6 @@
 import {animate} from './helpers'
 
-const calc = () => {
+const calc = (price) => {
   const calcBlock = document.querySelector('.calc-block');
 
   if(calcBlock) {
@@ -32,11 +32,13 @@ const calc = () => {
 
 
       if(calcTypeValue && calcTypeMaterialValue && calcInput.value) {
-        totalValue =  calcInput.value * calcTypeValue * calcTypeMaterialValue;
-
-      } else totalValue = 0;
+        totalValue = price *  calcInput.value * calcTypeValue * calcTypeMaterialValue;
+        animateChangeTotal(totalValue);
+        
+      } else  totalValue = 0; animateChangeTotal(totalValue);
       
-      animateChangeTotal(totalValue);
+      
+      
 
     }
   
