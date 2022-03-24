@@ -18,7 +18,7 @@ const calc = (price) => {
           return timeFraction;
         },
         draw(progress) {
-            total.value =  Math.round(value * progress) ;
+            total.placeholder =  Math.round(value * progress) + ' RUB';
         }
       });
     }
