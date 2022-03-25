@@ -11,7 +11,7 @@
         {
             mobileMenu.classList.remove('collapse');
         }
-        console.log(mobileMenu)
+        
     });
 };
 export default menuMobile

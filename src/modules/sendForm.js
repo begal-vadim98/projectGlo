@@ -38,7 +38,6 @@ const sendForm = ({
     
       someElem.forEach(elem => {
         const element = document.getElementById(elem.id);
-        
         if(element) {
           if (elem.type === 'block' && +element.textContent > 0) {
             formBody[elem.id] = element.textContent;

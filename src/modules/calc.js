@@ -9,7 +9,7 @@ const calc = (price) => {
     calcTypeMaterial = calcBlock.querySelector('#calc-type-material'),
     calcInput = calcBlock.querySelector('#calc-input'),
     total = document.getElementById('calc-total');
-  
+    
 
     const animateChangeTotal = (value) => {
       animate({
@@ -18,7 +18,7 @@ const calc = (price) => {
           return timeFraction;
         },
         draw(progress) {
-            total.placeholder =  Math.round(value * progress) + ' RUB';
+            total.value =  Math.round(value * progress);
         }
       });
     }
@@ -33,8 +33,7 @@ const calc = (price) => {
 
       if(calcTypeValue && calcTypeMaterialValue && calcInput.value) {
         totalValue = price *  calcInput.value * calcTypeValue * calcTypeMaterialValue;
-        animateChangeTotal(totalValue);
-        
+        animateChangeTotal(totalValue)
       } else  totalValue = 0; 
       
       
